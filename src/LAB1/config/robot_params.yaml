@@ -1,0 +1,52 @@
+# Turtlebot3 Burger Robot Parameters
+# Reference: https://emanual.robotis.com/docs/en/platform/turtlebot3/features/
+
+# Robot dimensions (meters)
+robot:
+  wheel_separation: 0.160  # Distance between wheels (m)
+  wheel_radius: 0.033      # Wheel radius (m)
+  wheel_base: 0.140        # Robot width (m)
+  robot_length: 0.178      # Robot length (m)
+  robot_height: 0.192      # Total height (m)
+
+# Frame IDs
+frames:
+  odom: "odom"
+  base_footprint: "base_footprint"
+  base_link: "base_link"
+  imu_link: "imu_link"
+  laser_link: "base_scan"
+
+# Sensor mounting positions (relative to base_link)
+sensors:
+  imu:
+    x: 0.0
+    y: 0.0
+    z: 0.068
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  
+  lidar:
+    x: -0.032
+    y: 0.0
+    z: 0.172
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+
+# Topic names
+topics:
+  scan: "/scan"
+  imu: "/imu"
+  joint_states: "/joint_states"
+  wheel_odom: "/wheel_odom"
+  ekf_odom: "/ekf_odom"
+  icp_odom: "/icp_odom"
+
+# Publishing rates (Hz)
+rates:
+  scan: 5.0
+  imu: 20.0
+  joint_states: 20.0
+  odom_publish: 20.0
