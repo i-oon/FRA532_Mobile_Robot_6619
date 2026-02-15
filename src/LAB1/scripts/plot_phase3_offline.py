@@ -143,7 +143,18 @@ def main():
     fig.savefig(png_path, dpi=150, bbox_inches='tight')
     fig.savefig(svg_path, bbox_inches='tight')
     
-    # Print results
+    print(f'\nPlots saved:')
+    print(f'  PNG: {png_path}')
+    print(f'  SVG: {svg_path}')
+    print('\n📊 Close the plot window to see results...\n')
+    
+    # Show plot (blocks until window closed)
+    try:
+        plt.show()
+    except KeyboardInterrupt:
+        print('\n\n⚠️  Plot interrupted')
+    
+    # ✅ Print results AFTER plot closes
     print('\n' + '='*60)
     print('PHASE 3: COMPARISON RESULTS')
     print('='*60)
@@ -166,22 +177,17 @@ def main():
     icp_err = np.sqrt(icp['x'].iloc[-1]**2 + icp['y'].iloc[-1]**2)
     print(f'  Loop error: {icp_err:.3f}m')
     
-    print(f'\nImprovement vs Wheel:')
+    print(f'\n📈 Improvement vs Wheel:')
     ekf_improvement = ((wheel_err - ekf_err) / wheel_err) * 100
     icp_improvement = ((wheel_err - icp_err) / wheel_err) * 100
     print(f'  EKF: {ekf_improvement:+.1f}%')
     print(f'  ICP: {icp_improvement:+.1f}%')
     
-    print(f'\nICP vs EKF:')
+    print(f'\n🎯 ICP vs EKF:')
     icp_vs_ekf = ((ekf_err - icp_err) / ekf_err) * 100
     print(f'  Improvement: {icp_vs_ekf:+.1f}%')
     
-    print(f'\nPlots saved:')
-    print(f'  {png_path}')
-    print(f'  {svg_path}')
     print('='*60)
-    
-    plt.show()
 
 
 if __name__ == '__main__':

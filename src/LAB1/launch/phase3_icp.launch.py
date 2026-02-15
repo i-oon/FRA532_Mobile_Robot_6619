@@ -27,7 +27,7 @@ def generate_launch_description():
     
     min_correspondences_arg = DeclareLaunchArgument(
         'min_correspondences',
-        default_value='20',
+        default_value='30',
         description='Minimum number of correspondences'
     )
     

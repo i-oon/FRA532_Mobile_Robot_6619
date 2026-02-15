@@ -41,6 +41,10 @@ install(PROGRAMS
   LAB1/icp_localization_node.py
   scripts/record_phase3_data.py
   scripts/plot_phase3_offline.py
+
+  scripts/record_phase4_data.py
+  scripts/plot_phase4_offline.py
+  scripts/odom_to_path_multi.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -157,7 +157,7 @@ class WheelOdometryNode(Node):
         odom = Odometry()
         odom.header.stamp = stamp
         odom.header.frame_id = 'odom'
-        odom.child_frame_id = 'base_footprint'
+        odom.child_frame_id = 'base_link'
         
         # Pose
         odom.pose.pose.position.x = self.x
