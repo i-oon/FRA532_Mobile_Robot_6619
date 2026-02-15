@@ -47,11 +47,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: true
         base_link:
-          Value: false
+          Value: true
         base_scan:
+          Value: false
+        imu_link:
           Value: false
         map:
           Value: true
@@ -65,10 +65,11 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            base_footprint:
-              base_link:
-                base_scan:
-                  {}
+            base_link:
+              base_scan:
+                {}
+              imu_link:
+                {}
       Update Interval: 0
       Value: true
       
